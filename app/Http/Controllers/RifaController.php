@@ -39,8 +39,8 @@ class RifaController extends Controller
     public function store(Request $request)
     {
         $rifa = new Rifa();
-        $rifa -> $name = $request -> name;
-        $rifa -> $rifaCategory = $request -> rifa_category;
+        $rifa -> name = $request -> name;
+        $rifa -> rifa_category = $request -> rifa_category;
         if ($rifa -> save()) {
             return new RifaResource($rifa);
         }
@@ -80,12 +80,12 @@ class RifaController extends Controller
     {
         $rifa = Rifa::findOrFail($id);
         $rifa -> name = $request -> name;
-        $rifa -> rifaCategory = $request -> rifa_category;
+        $rifa -> rifa_category = $request -> rifa_category;
         if ($rifa -> save()) {
             return new RifaResource($rifa);
         }
     }
-    }
+
 
     /**
      * Remove the specified resource from storage.
@@ -93,7 +93,7 @@ class RifaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-      function destroy($id)
+      public function destroy($id)
     {
         $rifa = Rifa::findOrFail($id);
         if ($rifa -> delete()) {
@@ -101,4 +101,4 @@ class RifaController extends Controller
         }
 
     }
-
+}
