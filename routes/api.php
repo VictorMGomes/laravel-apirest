@@ -22,8 +22,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 /*-------------------------------------------------------------------------|
 | Rotas para Rifa
 |--------------------------------------------------------------------------*/
-Route::get('rifa', [RifaController::class, 'index']);
-Route::post('rifa/post', [RifaController::class, 'store']);
-Route::get('rifa/{id}', [RifaController::class, 'show']);
-Route::put('rifa/{id}', [RifaController::class, 'update']);
-Route::delete('rifa/{id}', [RifaController::class, 'destroy']);
+Route::get('rifa/listall', [RifaController::class, 'index']);
+Route::post('rifa/save', [RifaController::class, 'store']);
+Route::get('rifa/listbyid/{id}', [RifaController::class, 'show']);
+Route::put('rifa/update/{id}', [RifaController::class, 'update']);
+Route::delete('rifa/delete/{id}', [RifaController::class, 'destroy']);
